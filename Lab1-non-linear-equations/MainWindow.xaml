@@ -5,8 +5,87 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Lab1_non_linear_equations"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        
+        Title="MainWindow" Height="450" Width="741.5">
+    <Grid Margin="0,0,2,0">
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid  HorizontalAlignment="Left" Height="90" VerticalAlignment="Top" Width="189" Margin="37,38,0,0" >
+            <Label Content="Choose method name:" HorizontalAlignment="Left" VerticalAlignment="Top" Width="189" Height="23"/>
+            <StackPanel x:Name="Methods" Margin="0,28,0,0">
+                <RadioButton x:Name="BtnFalsePos" GroupName="Methods" Content="False position method" IsChecked="True" />
+                <RadioButton x:Name="BtnSteffensen" GroupName="Methods" Content="Steffensen's method" />
+                <RadioButton x:Name="BtnIterations" GroupName="Methods" Content="Simple iterations method" />
+                <RadioButton x:Name="BtnGrafee" GroupName="Methods" Content="Graeffe's method" />
+            </StackPanel>
+        </Grid>
+        <Grid HorizontalAlignment="Left" Height="66" Margin="299,38,0,0" VerticalAlignment="Top" Width="406" Background="Wheat">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="0*"></RowDefinition>
+                <RowDefinition/>
+                <RowDefinition></RowDefinition>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Label  Content="a7" HorizontalAlignment="Left" VerticalAlignment="Top" Height="56" Width="51" Grid.RowSpan="3"/>
+            <Label  Content="a6" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Top" Height="33" Width="51" Grid.RowSpan="2"/>
+            <Label  Content="a5" HorizontalAlignment="Left" VerticalAlignment="Top" Height="33" Width="51" Grid.Column="2" Grid.RowSpan="2"/>
+            <Label  Content="a4" Grid.Column="3" HorizontalAlignment="Left" VerticalAlignment="Top" Height="33" Width="51" Grid.RowSpan="2"/>
+            <Label  Content="a3" Grid.Column="4" HorizontalAlignment="Left" VerticalAlignment="Top" Height="33" Width="51" Grid.RowSpan="2"/>
+            <Label  Content="a2" Grid.Column="5" HorizontalAlignment="Left" VerticalAlignment="Top" Height="33" Width="48" Grid.RowSpan="2"/>
+            <Label  Content="a1" Grid.Column="5" HorizontalAlignment="Left" Margin="48,0,0,0" VerticalAlignment="Top" Grid.ColumnSpan="2" Height="33" Width="52" Grid.RowSpan="2"/>
+            <Label  Content="a0" Grid.Column="7" HorizontalAlignment="Left" Margin="0,0,-1,0" VerticalAlignment="Top" Height="33" Width="52" Grid.RowSpan="2"/>
+            <TextBox x:Name="A7" HorizontalAlignment="Left" Height="33" Grid.Row="2" TextWrapping="Wrap" VerticalAlignment="Top" Width="51" Text="-55 "/>
+            <TextBox x:Name="A6" Grid.Column="1" HorizontalAlignment="Left" Height="33" Grid.Row="2" TextWrapping="Wrap" VerticalAlignment="Top" Width="51" Text="119 "/>
+            <TextBox x:Name="A5" HorizontalAlignment="Left" Height="33" TextWrapping="Wrap" VerticalAlignment="Top" Width="51" Grid.Column="2" Grid.Row="2" Text="280 "/>
+            <TextBox x:Name="A4" HorizontalAlignment="Left" Height="33" TextWrapping="Wrap" VerticalAlignment="Top" Width="51" Grid.Column="3" Grid.Row="2" Text="-634 "/>
+            <TextBox x:Name="A3" HorizontalAlignment="Left" Height="33" TextWrapping="Wrap" VerticalAlignment="Top" Width="51" Grid.Column="4" Grid.Row="2" Text="-209"/>
+            <TextBox x:Name="A2" HorizontalAlignment="Left" Height="33" TextWrapping="Wrap" VerticalAlignment="Top" Width="50" Grid.Column="5" Grid.Row="2" Text="514 "/>
+            <TextBox x:Name="A1" HorizontalAlignment="Left" Height="33" TextWrapping="Wrap" VerticalAlignment="Top" Width="50" Grid.Column="6" Grid.Row="2" Text="131 "/>
+            <TextBox x:Name="A0" HorizontalAlignment="Left" Height="33" TextWrapping="Wrap" VerticalAlignment="Top" Width="51" Grid.Column="7" Grid.Row="2" Text="3 "/>
+        </Grid>
+        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="66" Margin="299,38,0,0" VerticalAlignment="Top" Width="406"/>
+        <Grid HorizontalAlignment="Left" Height="85" Margin="37,166,0,0" VerticalAlignment="Top" Width="213">
+            <Label Content="Choose equation" HorizontalAlignment="Left" VerticalAlignment="Top" Height="27" Width="213"/>
+            <StackPanel x:Name="Equations" Margin="0,28,0,0" Height="56" VerticalAlignment="Top">
+                <RadioButton x:Name="BtnEq1" GroupName="Equations" Content="x*cos(ch(x - pi)) + 0.3x = 0" IsChecked="True" />
+                <RadioButton x:Name="BtnEq2" GroupName="Equations" Content="sqrt(5 - x)*sin(x) + x * cos(pi - x) = 0" />
+                <RadioButton x:Name="BtnEq3" GroupName="Equations" Content="Algebraic equation" />
+            </StackPanel>
+        </Grid>
+        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="85" Margin="37,166,0,0" VerticalAlignment="Top" Width="213"/>
+        <Grid Background="Wheat" HorizontalAlignment="Left" Height="84" Margin="37,292,0,0" VerticalAlignment="Top" Width="213">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="0*"></RowDefinition>
+                <RowDefinition/>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Label Content="Desired accuracy" HorizontalAlignment="Left" Grid.RowSpan="2" VerticalAlignment="Top" Height="28" Width="131"/>
+            <Label Content="Interval (a)" HorizontalAlignment="Left" Grid.Row="2" VerticalAlignment="Top" Height="28" Width="131"/>
+            <Label Content="Interval (b)" HorizontalAlignment="Left" Grid.Row="3" VerticalAlignment="Top" Height="28" Width="131"/>
+            <TextBox x:Name="Accuracy" Grid.Column="1" HorizontalAlignment="Left" Height="28" Grid.RowSpan="2" TextWrapping="Wrap" VerticalAlignment="Top" Width="107" Text="0,5"/>
+            <TextBox x:Name="LeftBound" Grid.Column="1" HorizontalAlignment="Left" Height="28" Grid.Row="2" TextWrapping="Wrap" VerticalAlignment="Top" Width="107" Text="1"/>
+            <TextBox x:Name="RightBound" HorizontalAlignment="Left" Height="28" TextWrapping="Wrap" VerticalAlignment="Top" Width="107" Grid.Column="1" Grid.Row="3" Text="2"/>
+        </Grid>
+        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="84" Margin="37,292,0,0" VerticalAlignment="Top" Width="213" RenderTransformOrigin="0.427,0.464"/>
+        <TextBox x:Name="Output" Text="Output" HorizontalAlignment="Left" Margin="299,166,0,0" VerticalAlignment="Top" Height="167" Width="406"/>
+        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="167" Margin="299,166,0,0" VerticalAlignment="Top" Width="406"/>
+        <Button Content="Calculate" HorizontalAlignment="Left" Height="38" Margin="597,338,0,0" VerticalAlignment="Top" Width="108" Click="Button_Click_1"/>
     </Grid>
 </Window>
